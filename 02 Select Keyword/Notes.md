@@ -72,14 +72,14 @@ This returns names of students whose grade is 'A'.
 
 ## 4. SELECT with ORDER BY Clause
 
-Used to sort the result set.
+Used to sort the result set. If order by clause is using on multiple col then most priority will given to left column first.
 
 ### Syntax:
 
 ```sql
 SELECT column1, column2
 FROM table_name
-ORDER BY column1 [ASC|DESC];
+ORDER BY column1, column2 ... [ASC|DESC];
 ```
 
 ### Example:
