@@ -244,3 +244,106 @@ Here, Manager → Department (but Manager is not a candidate key)
 Normalization is a multi-step process that improves database design by eliminating redundancy and maintaining logical relationships. Understanding **all normal forms from 1NF to 5NF** helps ensure high-quality, scalable, and maintainable databases.
 
 Let me know if you'd like visual diagrams or a quick-reference table for each normal form.
+
+
+# Properties 
+
+# Normalization in SQL - Detailed Explanation with Examples
+
+## Overview
+
+**Normalization** is the process of organizing data in a database to reduce **data redundancy** and improve **data integrity**. It divides large, complex tables into smaller, more manageable pieces without losing data relationships.
+
+---
+
+## Objectives of Normalization
+
+* Eliminate redundant (repetitive) data
+* Ensure logical data storage
+* Enhance data consistency
+* Improve query efficiency
+
+---
+
+## Key Concepts Explained
+
+### Atomicity (used in 1NF)
+
+Atomicity ensures that every field in a table holds indivisible values—i.e., no lists, arrays, or multiple values in a single column.
+
+### Partial Dependency (eliminated in 2NF)
+
+Occurs when a **non-prime attribute** (not part of a candidate key) is functionally dependent on only **part of a composite primary key**. It leads to redundancy and anomalies.
+
+> ✅ Fixed by separating the dependent data into another table.
+
+### Transitive Dependency (eliminated in 3NF)
+
+Occurs when a **non-key attribute** depends on another **non-key attribute** rather than directly on the primary key.
+
+> ✅ Fixed by moving dependent columns into a new table.
+
+### Determinant (important in BCNF)
+
+A determinant is any attribute (or set of attributes) on which some other attribute is fully functionally dependent. In BCNF, **every determinant must be a candidate key**.
+
+### Multivalued Dependency (eliminated in 4NF)
+
+Occurs when one attribute in a table **independently determines multiple values of another attribute**, not functionally dependent.
+
+> ✅ Fixed by placing them in separate tables.
+
+### Join Dependency (eliminated in 5NF)
+
+Occurs when a table can be **reconstructed from multiple smaller tables**, but not just two at a time (requires n-way join).
+
+> ✅ Solved by decomposing the table further without data loss.
+
+---
+
+## Types of Normal Forms
+
+### 1. First Normal Form (1NF)
+
+* Ensures that each column contains **atomic values** (no multiple values in a single field)
+* Each record is unique
+
+### 2. Second Normal Form (2NF)
+
+* Must be in 1NF
+* No **partial dependency** (non-key attributes depend on entire primary key)
+
+### 3. Third Normal Form (3NF)
+
+* Must be in 2NF
+* No **transitive dependency** (non-key attributes must depend only on the primary key)
+
+### 4. Boyce-Codd Normal Form (BCNF)
+
+* A stricter version of 3NF
+* Every determinant must be a candidate key
+* Used when a table is in 3NF but still has anomalies due to **non-candidate keys** determining other attributes
+
+### 5. Fourth Normal Form (4NF)
+
+* Must be in BCNF
+* No **multi-valued dependencies**
+
+### 6. Fifth Normal Form (5NF)
+
+* Must be in 4NF
+* Deals with **join dependency** and lossless decomposition
+
+---
+
+## \[All Example Sections Continue Below Unchanged]
+
+(Examples 1 to 6 remain the same as before and demonstrate the normal forms in action)
+
+---
+
+## Conclusion
+
+Normalization is a multi-step process that improves database design by eliminating redundancy and maintaining logical relationships. Understanding **all normal forms from 1NF to 5NF**, along with their related dependency properties, helps ensure high-quality, scalable, and maintainable databases.
+
+Let me know if you'd like visual diagrams or a quick-reference table for each normal form.
