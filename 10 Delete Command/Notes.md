@@ -101,18 +101,18 @@ Deletes records in `Students` table for those who scored below 40.
 
 | Command  | Removes Data | Removes Structure | Rollback Possible | Speed   |
 | -------- | ------------ | ----------------- | ----------------- | ------- |
-| DELETE   | ✅ Yes        | ❌ No              | ✅ Yes             | Slower  |
-| TRUNCATE | ✅ Yes        | ❌ No              | ❌ No              | Faster  |
-| DROP     | ✅ Yes        | ✅ Yes             | ❌ No              | Fastest |
+| DELETE   | ✅ Yes       | ❌ No             | ✅ Yes            | Slower  |
+| TRUNCATE | ✅ Yes       | ❌ No             | ❌ No             | Faster  |
+| DROP     | ✅ Yes       | ✅ Yes            | ❌ No             | Fastest |
 
 ---
 
 ## Notes
 
-* `DELETE` affects only the rows that match the condition.
-* It logs each deleted row, so it's **transaction-safe**.
-* Can be rolled back using `ROLLBACK` if inside a transaction.
-* Triggers (if any) can be fired during a `DELETE` operation.
+- `DELETE` affects only the rows that match the condition.
+- It logs each deleted row, so it's **transaction-safe**.
+- Can be rolled back using `ROLLBACK` if inside a transaction.
+- Triggers (if any) can be fired during a `DELETE` operation.
 
 ---
 
